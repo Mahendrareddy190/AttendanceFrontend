@@ -1,0 +1,17 @@
+ul li a:hover {
+  position: relative;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+}
+
+@media (max-width: 650px) {
+  .optio {
+    width: 240px;
+    /* margin-left: 20px; */
+  }
+}
+
+@media (min-width: 768px) {
+  .movedrop {
+    margin: 0 0 0 500px;
+  }
+}

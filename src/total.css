@@ -1,0 +1,41 @@
+ 
+@media (max-width: 670px) {
+  .smallmk {
+    width: 90%;
+    padding: 15%;
+    margin: 50px 0 0 10px;
+  }
+  .Excels {
+    margin: 20px 0 0 170px;
+  }
+}
+@media (max-width: 500px) {
+  .smallmk {
+    width: 90%;
+    padding: 15%;
+    margin: 50px 0 0 0px;
+  }
+  .Excels {
+    margin: 20px 0 0 170px;
+  }
+}
+
+@media (min-width: 671px) {
+  .smallmk {
+    width: 90%;
+    margin: 50px 0 0 30px;
+  }
+  .Excels {
+    margin: 20px 0 0 270px;
+  }
+}
+
+@media (min-width: 992px) {
+  .smallmk {
+    width: 90%;
+    margin: 60px 0 0 60px;
+  }
+  .Excels {
+    margin: 20px 0 0 620px;
+  }
+}

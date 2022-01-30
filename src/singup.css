@@ -1,0 +1,342 @@
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+.form {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35), 0px 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 10%;
+  margin: 40px 0 0 0;
+}
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.facebook-bg {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 50px;
+  cursor: pointer;
+  height: 50px;
+  color: #ffffff;
+  background-color: #4267b2;
+  display: flex;
+  border-radius: 10%;
+}
+.google-bg {
+  cursor: pointer;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #db4437;
+  display: flex;
+  border-radius: 10%;
+  margin: 0 0 0 10px;
+}
+.twitter-bg {
+  cursor: pointer;
+  box-sizing: border-box;
+  align-items: center;
+  color: #ffffff;
+  justify-content: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-color: #1da1f2;
+  display: flex;
+  border-radius: 10%;
+  margin: 0 0 0 10px;
+}
+.insta-bg {
+  box-sizing: border-box;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  border-radius: 10%;
+  background-color: #e1306c;
+  display: flex;
+  margin: 0 0 0 10px;
+}
+@media only screen and (max-width: 671px) {
+  .backm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .bg1-down {
+    display: none;
+  }
+  .blur {
+    box-sizing: border-box;
+    width: 370px;
+    height: 400px;
+    border-radius: 10%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35),
+      0px 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 150px 0 0 10px;
+  }
+
+  .blur .panel {
+    position: relative;
+    width: 370px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10%;
+  }
+  .from-wra {
+    position: absolute;
+    width: 320px;
+    height: 450px;
+    margin: 40px 0 0 25px;
+  }
+  .font-bb {
+    font-size: 12px;
+  }
+  .well {
+    display: block;
+    width: 350px;
+    height: 100%;
+    position: absolute;
+    font-size: 50px;
+    color: black;
+    margin: 40px 0 0 40px;
+    font-family: "Staatliches", cursive;
+  }
+}
+@media only screen and (min-width: 671px) {
+  .backm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .bg1-down {
+    display: none;
+  }
+  .blur {
+    box-sizing: border-box;
+    width: 440px;
+    height: 400px;
+    border-radius: 10%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35),
+      0px 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 70px 0 0 150px;
+  }
+
+  .blur .panel {
+    position: relative;
+    width: 440px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10%;
+  }
+  .from-wra {
+    position: absolute;
+    width: 380px;
+    height: 450px;
+    margin: 40px 0 0 25px;
+  }
+  .font-bb {
+    font-size: 12px;
+  }
+  .well {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 50px;
+    color: black;
+    margin: 0px 0 0 70px;
+    font-family: "Staatliches", cursive;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .backm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .bg1-down {
+    display: block;
+    width: 520px;
+    height: 450px;
+    margin: 0 0 0 60px;
+  }
+  .blur {
+    box-sizing: border-box;
+    width: 440px;
+    height: 400px;
+    border-radius: 10%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35),
+      0px 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 50px 0 0 20px;
+  }
+
+  .blur .panel {
+    position: relative;
+    width: 440px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10%;
+  }
+  .from-wra {
+    position: absolute;
+    width: 380px;
+    height: 450px;
+    margin: 40px 0 0 25px;
+  }
+  .font-bb {
+    font-size: 12px;
+  }
+  .well {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 40px;
+    color: black;
+    margin: 0px 0 0 100px;
+    font-family: "Staatliches", cursive;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .backm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .bg1-down {
+    display: block;
+    width: 520px;
+    height: 450px;
+    margin: 0 0 0 50px;
+  }
+  .blur {
+    box-sizing: border-box;
+    width: 440px;
+    height: 400px;
+    border-radius: 10%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35),
+      0px 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 50px 0 0 20px;
+  }
+
+  .blur .panel {
+    position: relative;
+    width: 440px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10%;
+  }
+  .from-wra {
+    position: absolute;
+    width: 380px;
+    height: 450px;
+    margin: 40px 0 0 25px;
+  }
+  .font-bb {
+    font-size: 12px;
+  }
+  .well {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 40px;
+    color: black;
+    margin: 0px 0 0 100px;
+    font-family: "Staatliches", cursive;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .backm {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .bg1-down {
+    width: 520px;
+    height: 450px;
+    margin: 0 0 0 30px;
+    /* position: absolute; */
+  }
+  .blur {
+    box-sizing: border-box;
+    width: 440px;
+    height: 400px;
+    border-radius: 10%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35),
+      0px 5px 15px rgba(0, 0, 0, 0.35);
+    margin: 140px 0 0 130px;
+  }
+
+  .blur .panel {
+    position: relative;
+    width: 440px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10%;
+  }
+  .from-wra {
+    position: absolute;
+    width: 380px;
+    height: 450px;
+    margin: 40px 0 0 25px;
+  }
+  .font-bb {
+    font-size: 12px;
+  }
+  .bg1-down {
+    display: block;
+    width: 520px;
+    height: 450px;
+    margin: 0 0 0 160px;
+  }
+  .well {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    color: black;
+    margin: 20px 0 0 180px;
+    font-family: "Staatliches", cursive;
+  }
+}
