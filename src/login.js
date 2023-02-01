@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 import { useEffect } from "react";
 import tilt from "./Assets/tilt.svg";
 import bg1 from "./Assets/bg1.svg";
 import { User } from "./cors/auth";
 import swal from "sweetalert";
-import { css } from "@emotion/react";
+// import { css } from "@emotion/react";
 
 const Login = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
     password: "",
     error: "",
     didRedirect: false,
   });
-  const { email, password, error, didRedirect } = values;
+  const { email, password } = values;
 
   const handleChange = (email) => (event) => {
     setValues({ ...values, error: false, [email]: event.target.value });
@@ -27,7 +27,7 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     setValues({ ...values, error: false });
-    if (values.email != "" && values.password != "") {
+    if (values.email !== "" && values.password !== "") {
       console.log("value: ", values);
       await User({ email, password }).then((data) => {
         if (data && data.error) {
@@ -37,8 +37,8 @@ const Login = () => {
           window.localStorage.setItem("userdata", JSON.stringify(data));
         }
         if (!data.error) {
-          if (data.msg.email != data.msg.password) {
-            history.push("/");
+          if (data.msg.email !== data.msg.password) {
+            navigate("/");
           }
         } else {
           swal(
@@ -137,8 +137,8 @@ const Login = () => {
                       cursor: "pointer",
                     }}
                   >
-                    <a href="#" style={{ textDecoration: "none" }}>
-                      <b href="#">Forgot password?</b>
+                    <a href="/login" style={{ textDecoration: "none" }}>
+                      <b>Forgot password?</b>
                     </a>
                   </p>
                   <p

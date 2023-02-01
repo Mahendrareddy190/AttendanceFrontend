@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "./navbar";
 import swal from "sweetalert";
 import "./Absent.css";
-import Fotter from "./Fotter";
 
 const { matchs } = require("./cors/studenthelper");
 const Present = () => {
@@ -14,7 +13,7 @@ const Present = () => {
     error: "",
   });
 
-  const { date, error } = value;
+  const { date } = value;
 
   const onHandleChange = (name) => (event) => {
     setValue({ ...value, error: false, [name]: event.target.value });
@@ -25,7 +24,7 @@ const Present = () => {
     setValue({ ...value, error: false });
     let items = JSON.parse(localStorage.getItem("userdata"));
     let userId = items.msg._id;
-    matchs({ value },userId).then((data) => {
+    matchs({ value }, userId).then((data) => {
       if (data.result != null) {
         if (data && data.message) {
           console.log(data.message);
@@ -33,9 +32,7 @@ const Present = () => {
           setCart(data.result.names);
           swal("Good job!", "Your Data Fetched!", "success");
         }
-      }
-      else
-      {
+      } else {
         swal("Enter valid Date..?", "We can`t fetch your data!", "error");
       }
     });
@@ -103,12 +100,13 @@ const Present = () => {
               <tbody>
                 {cart
                   .filter((value) => {
-                    if (search == "") {
+                    if (search) {
                       return value;
                     } else if (
                       value.list.name
+                        .toString()
                         .toLowerCase()
-                        .includes(search.toLowerCase())
+                        .includes(search.toString().toLowerCase())
                     ) {
                       return value;
                     }
@@ -119,7 +117,6 @@ const Present = () => {
                         <tr className="countf">
                           <td>{stud.list.name}</td>
                           <td>
-                            {" "}
                             {stud.status === true ? "present" : " Absent"}
                           </td>
                         </tr>
@@ -131,9 +128,6 @@ const Present = () => {
           </div>
         </div>
       </div>
-      {/* <div className="container-fliud pr-0 pl-0 ">
-        <Fotter />
-      </div> */}
     </div>
   );
 };

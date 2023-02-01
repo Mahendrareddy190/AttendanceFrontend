@@ -15,7 +15,7 @@ const Singup = () => {
     error: "",
   });
 
-  const { name, email, password, conformPassword, error } = values;
+  const { name, email, password, conformPassword } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -24,7 +24,7 @@ const Singup = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     if (values.conformPassword === values.password) {
-      if (values.password != "") {
+      if (values.password !== "") {
         console.log(values);
         setValues({ ...values, error: false });
         createUser({ email, password }).then((data) => {
@@ -32,18 +32,18 @@ const Singup = () => {
             setValues({ ...values, error: data.error });
           } else {
             setValues({ ...values });
-            swal("User Created Successfully", "please verify your email before login", "success");
+            swal(
+              "User Created Successfully",
+              "please verify your email before login",
+              "success"
+            );
           }
         });
       } else {
         swal("Data Empty..?", "Enter your Credentials!", "warning");
       }
     } else {
-      swal(
-        "We are very sorry!",
-        "Both Password`s dosen`t match",
-        "error"
-      );
+      swal("We are very sorry!", "Both Password`s dosen`t match", "error");
     }
   };
 

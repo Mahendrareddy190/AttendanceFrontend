@@ -24,7 +24,7 @@ const StudentList = () => {
     section: "",
     error: "",
   });
-  const { name, rollno, section, error } = values;
+  const { name, rollno, section } = values;
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
@@ -41,7 +41,7 @@ const StudentList = () => {
     margin-bottom: 100px;
     border-color: red;
   `;
-  let [color, setColor] = useState("#F71071");
+  let [color] = useState("#F71071");
 
   const formRef = useRef(null);
 
@@ -79,7 +79,6 @@ const StudentList = () => {
 
   const dele = (studentId) => {
     var result = window.confirm("Are U Sure u Want To Delete Student..?");
-    console.log(result);
     if (result === true) {
       deleteStudent(studentId).then((data) => {
         if (data && data.error) {
@@ -96,7 +95,7 @@ const StudentList = () => {
       <div className="row mt-5 py-4 content12 ml-0 mr-0">
         <div className="col-lg-6 mt-5 col-sm offset-md-3  ">
           <form>
-            <label className="text-light">Name : </label>
+            <label style={{ color: "green" }}>Name : </label>
             <div className="form-group">
               <input
                 className="form-control"
@@ -106,7 +105,7 @@ const StudentList = () => {
                 name="text"
                 ref={formRef}
               />
-              <label className="text-light">Roll No : </label>
+              <label style={{ color: "green" }}>Roll No : </label>
               <input
                 className="form-control"
                 type="text"
@@ -114,7 +113,7 @@ const StudentList = () => {
                 value={rollno}
                 name="text"
               />
-              <label className="text-light">Section : </label>
+              <label style={{ color: "green" }}>Section : </label>
               <input
                 className="form-control"
                 type="text"
@@ -143,13 +142,13 @@ const StudentList = () => {
           <div className=" col-lg-8   col-sm pl-0 pr-0 mt-5 ">{formData()}</div>
         </div>
         <div className="row ml-0 mr-0">
-          <div className="col-lg-8   col-sm pl-0 pr-0">
+          <div className="col-lg-8 col-sm pl-0 pr-0">
             <div className="search">
               <form className="d-flex">
                 <input
                   className="form-control pl-0 pr-0"
                   type="text"
-                  placeholder="Search"
+                  placeholder="Roll Number"
                   name="text"
                   onChange={(event) => setSearch(event.target.value)}
                   aria-label="Search"
@@ -178,14 +177,19 @@ const StudentList = () => {
                     .filter((value) => {
                       if (search === "") {
                         return value;
-                      } else if (value.rollno.includes(search)) {
+                      } else if (
+                        value.rollno
+                          .toString()
+                          .toLowerCase()
+                          .includes(search.toString().toLowerCase())
+                      ) {
                         return value;
                       }
                     })
                     .map((stud, count) => {
                       return (
                         <tr key={stud._id}>
-                          <td>{count == 0 ? (count += 1) : (count += 1)}</td>
+                          <td>{count === 0 ? (count += 1) : (count += 1)}</td>
                           <td style={{ fontSize: "15px" }}>{stud.name}</td>
                           <td>{stud.rollno}</td>
                           <td style={{ fontSize: "15px" }}>{stud.section}</td>
@@ -205,13 +209,15 @@ const StudentList = () => {
                 </tbody>
               )}
             </table>
-            <ReactHTMLTableToExcel
-              className="btn btn-primary excel"
-              table="emp-table"
-              filename="ClassList"
-              sheet="Sheet"
-              buttonText="Download"
-            />
+            <div className="mb-5">
+              <ReactHTMLTableToExcel
+                className="btn btn-primary excel"
+                table="emp-table"
+                filename="ClassList"
+                sheet="Sheet"
+                buttonText="Download"
+              />
+            </div>
           </div>
         </div>
       </div>

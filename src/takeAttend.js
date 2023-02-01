@@ -26,11 +26,11 @@ const Mahi = () => {
     margin-bottom: 100px;
     border-color: red;
   `;
-  let [color, setColor] = useState("#F71071");
+  let [color] = useState("#F71071");
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (cart != "") {
+    if (cart !== "") {
       let item = JSON.parse(localStorage.getItem("userdata"));
       let userId = item.msg._id;
       addAttendence(cart, userId).then((data) => {
@@ -99,7 +99,7 @@ const Mahi = () => {
                 <tbody>
                   {student.map((stud, count) => (
                     <tr key={stud._id}>
-                      <td>{count == 0 ? (count += 1) : (count += 1)}</td>
+                      <td>{count === 0 ? (count += 1) : (count += 1)}</td>
                       <td className="font mt-2" style={{ fontSize: "15px" }}>
                         {stud.name}
                       </td>

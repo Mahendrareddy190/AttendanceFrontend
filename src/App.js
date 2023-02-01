@@ -30,26 +30,30 @@ const App = () => {
       margin: 383px 0 0 110px;
     }
   `;
-  let [color, setColor] = useState("#F71071");
+  let [color] = useState("#F71071");
 
   var item = JSON.parse(localStorage.getItem("userdata"));
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/">
-          {loading ? (
-            <RiseLoader
-              color={color}
-              loading={loading}
-              css={override}
-              s
-              size={30}
-            />
-          ) : (
-            // <Preloder />
-            <Home />
-          )}
-        </Route>
+        <Route
+          exact
+          path="/"
+          element={
+            loading ? (
+              <RiseLoader
+                color={color}
+                loading={loading}
+                css={override}
+                s
+                size={30}
+              />
+            ) : (
+              // <Preloder />
+              <Home />
+            )
+          }
+        />
         <Route
           path={item === null ? "/login" : "/"}
           element={item === null ? <Login /> : <Home />}

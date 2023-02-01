@@ -1,5 +1,5 @@
 export const createStudent = (student, userId) => {
-  return fetch(`https://attendance-pro.herokuapp.com/api/create/${userId}`, {
+  return fetch(`http://localhost:3000/api/create/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -17,7 +17,7 @@ export const createStudent = (student, userId) => {
     .catch((err) => console.log(err));
 };
 export const addAttendence = (Attendence, userId) => {
-  return fetch(`https://attendance-pro.herokuapp.com/api/created/${userId}`, {
+  return fetch(`http://localhost:3000/api/created/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -32,7 +32,7 @@ export const addAttendence = (Attendence, userId) => {
 };
 
 export const matchs = (date, userId) => {
-  return fetch(`https://attendance-pro.herokuapp.com/api/match/${userId}`, {
+  return fetch(`http://localhost:3000/api/match/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -50,7 +50,7 @@ export const matchs = (date, userId) => {
 };
 
 export const getallstudent = (userId) => {
-  return fetch(`https://attendance-pro.herokuapp.com/api/getall/${userId}`, {
+  return fetch(`http://localhost:3000/api/getall/${userId}`, {
     method: "GET",
   })
     .then((response) => {
@@ -62,7 +62,7 @@ export const getallstudent = (userId) => {
 };
 
 export const AllAttendence = (userId) => {
-  return fetch(`https://attendance-pro.herokuapp.com/api/getalls/${userId}`, {
+  return fetch(`http://localhost:3000/api/getalls/${userId}`, {
     method: "GET",
   }).then((response) => {
     return new Promise((resolve, reject) => {
@@ -71,7 +71,7 @@ export const AllAttendence = (userId) => {
   });
 };
 export const deleteStudent = (studentId) => {
-  return fetch(`https://attendance-pro.herokuapp.com/api/delete/${studentId}`, {
+  return fetch(`http://localhost:3000/api/delete/${studentId}`, {
     method: "DELETE",
   })
     .then((response) => {
@@ -81,15 +81,12 @@ export const deleteStudent = (studentId) => {
 };
 
 export const deleteAttendence = (attendenceId) => {
-  return fetch(
-    `https://attendance-pro.herokuapp.com/api/delete/${attendenceId}`,
-    {
-      method: "DELETE",
-    }
-  )
+  return fetch(`http://localhost:3000/api/delete/${attendenceId}`, {
+    method: "DELETE",
+  })
     .then((response) => {
       return response.json();
     })
     .catch((err) => console.log(err));
 };
-// https://attendance-pro.herokuapp.com/
+// http://localhost:3000/

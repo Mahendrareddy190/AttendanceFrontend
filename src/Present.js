@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "./navbar";
 import "./App.css";
 import swal from "sweetalert";
@@ -14,7 +14,7 @@ const Present = () => {
     error: "",
   });
 
-  const { date, error } = value;
+  const { date } = value;
 
   const onHandleChange = (name) => (event) => {
     setValue({ ...value, error: false, [name]: event.target.value });
@@ -100,12 +100,13 @@ const Present = () => {
               <tbody>
                 {cart
                   .filter((value) => {
-                    if (search == "") {
+                    if (search === "") {
                       return value;
                     } else if (
                       value.list.name
+                        .toString()
                         .toLowerCase()
-                        .includes(search.toLowerCase())
+                        .includes(search.toString().toLowerCase())
                     ) {
                       return value;
                     }

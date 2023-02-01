@@ -29,7 +29,7 @@ const Total = () => {
       transform: translate(170%, 1120%);
     }
   `;
-  let [color, setColor] = useState("#F71071");
+  let [color] = useState("#F71071");
 
   const preload = async () => {
     let items = JSON.parse(localStorage.getItem("userdata"));
@@ -140,17 +140,20 @@ const Total = () => {
                 <tbody>
                   {cart
                     .filter((value) => {
-                      if (search == "") {
+                      if (!search) {
                         return value;
                       } else if (
-                        value.name.toLowerCase().includes(search.toLowerCase())
+                        value.name
+                          .toString()
+                          .toUpperCase()
+                          .includes(search.toString().toUpperCase())
                       ) {
                         return value;
                       }
                     })
                     .map((stud1, count) => (
                       <tr key={stud1._id}>
-                        <td>{count == 0 ? (count += 1) : (count += 1)}</td>
+                        <td>{count === 0 ? (count += 1) : (count += 1)}</td>
                         <td style={{ fontSize: "15px" }}>{stud1.name}</td>
                         <td>{counter()}</td>
                         <td>{counter1(stud1.rollno)}</td>
