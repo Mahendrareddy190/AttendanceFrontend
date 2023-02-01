@@ -1,5 +1,5 @@
 export const createUser = (user) => {
-  return fetch("http://localhost:3000/api/signup", {
+  return fetch("https://attendencebackend.onrender.com/api/signup", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -14,7 +14,7 @@ export const createUser = (user) => {
 };
 
 export const User = (userdata) => {
-  return fetch("http://localhost:3000/api/signin", {
+  return fetch("https://attendencebackend.onrender.com/api/signin", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -31,9 +31,12 @@ export const User = (userdata) => {
 };
 
 export const getusers = (usersId) => {
-  return fetch(`http://localhost:3000/api/getuser/${usersId}`, {
-    method: "GET",
-  })
+  return fetch(
+    `https://attendencebackend.onrender.com/api/getuser/${usersId}`,
+    {
+      method: "GET",
+    }
+  )
     .then((response) => {
       return new Promise((resolve, reject) => {
         resolve(response.json());
